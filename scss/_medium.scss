@@ -1,0 +1,13 @@
+
+
+@media(max-width: 972px){
+    .photo {
+        &__img {
+            width: 100%;
+            max-height: 700px;
+            
+            background-size: cover;
+            background-position: center;
+        }
+    }
+}
