@@ -1,21 +1,35 @@
-@media(min-width: 375px){
+@media(max-width: 350px){
+    .nav {
+        &__span{
+            left:20%;
+           
+        }
+    }
+}
+
+
+
+@media(max-width: 650px){
+    .photo{
+       
+        grid-template-columns: repeat(1,8fr);
+         gap: 5px 5px;
+
+         &__text {
+         
+            font-size: 1.5em;
+        }
+ }
     .nav {
         &__span{
             left:30%;
         }
-    }
-}
-
-@media(min-width: 550px){
-    .nav {
-        &__span{
-            left:40%;
-        }
+    
     }
 }
 
 
-@media(min-width: 768px){
+@media(min-width: 650px){
     .nav {
         &__span{
             left:40%;
@@ -26,10 +40,4 @@
     }
 }
 
-@media(min-width: 550px){
-    .nav {
-        &__span{
-            left:40%;
-        }
-    }
-}
+

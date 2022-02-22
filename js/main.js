@@ -1,11 +1,14 @@
 const burgerBtn = document.querySelector('.hamburger')
 const navMobile = document.querySelector('.nav-mobile')
+const navLink = document.querySelectorAll('a')
+
 
 const clicker = () => {
    
    if( burgerBtn.classList.toggle('is-active')){
     navMobile.style.transform = 'translateX(0)'
-    }
+    navLink.classList.add('marginTop')
+   }
     else{
         navMobile.style.transform = 'translateX(-300px)'
     }

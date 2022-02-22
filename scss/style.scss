@@ -20,15 +20,22 @@ body {
 	width: 100%;
 }
 .nav {
+
 	z-index:1000;
 	position: relative;
-	min-width: 100%;
+	
 	&-mobile {
 		transform: translateX(-300px);
 		transition: transform 1s;
 		z-index:1000;
+		background-color: $pink;
+		
+border-radius: 5px;
+		
+		
 	}
 	&-desktop {
+		width:100%;
 		display: none;
 	}
 	&-hamburger {
@@ -68,6 +75,7 @@ body {
 		display: flex;
 		justify-content: flex-start;
 		flex-direction: column;
+		padding: 0;
 		top:72px;
 	}
 	&__link {
@@ -78,89 +86,103 @@ body {
 }
 
 ///nav 2
+
 .active{
 	top:0;
 	position: fixed;
-	
 }
+.marginTop{
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	
+	padding: 5px 10px;
+}
+
 ////section1
 .gallery {
 	margin-top: 8em;
 }
 
-.photo {
-	position: relative;
+.photo{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	gap: 10px 10px;
+	gap: 5px 5px;
+	
 	
 
-	&__first {
-		background-image: url('../img/psiak.jpg');
-	}
-	&__second {
-		background-image: url('../img/labrador.jpg');
-	}
-	&__third {
-		background-image: url('../img/kot1.jpg');
-	}
-	&__fourth {
-		background-image: url('../img/dog6.jpg');
-	}
-	&__fifth {
-		background-image: url('../img/sonia.jpg');
-	}
-	&__sixth {
-		background-image: url('../img/dog4.jpg');
-	}
-	&__seventh {
-		background-image: url('../img/dog3.jpg');
-	}
-	&__eighth {
-		background-image: url('../img/dog2.jpg');
-	}
-	&__img {
-		z-index: 0;
-		width: 100%;
-		height: 700px;
-		position: relative;
-		background-size: cover;
-		background-position: center;
-	}
-
-		&__text {
-			opacity: 0;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			flex-direction: column;
-			z-index: 5;
-			color: $light-white;
-			font-size: 50px;
-			height: 100%;
-			transition: 1s;
-			padding: 1em 1em;
-		}
-		&__bg {
-			opacity:0;
-			position: absolute;
-			z-index: -10;
-			width: 100%;
-			height: 100%;
-			background-color: rgba(0, 0, 0, 0.8);
-			transition: 1s;
-		}
-
-		&__img:hover {
-			.photo__text {
-				opacity: 1;
-			}
-			.photo__bg {
-				opacity: 1;
-			}
-		}
+&__first {
+	background-image: url('..//img/dog2.jpg');
+}
+&__second {
+	background-image: url('../img/labrador.jpg');
+}
+&__third {
+	background-image: url('../img/kot1.jpg');
+}
+&__fourth {
+	background-image: url('../img/dog6.jpg');
+}
+&__fifth {
+	background-image: url('../img/sonia.jpg');
+}
+&__sixth {
+	background-image: url('../img/dog4.jpg');
+}
+&__seventh {
+	background-image: url('../img/dog3.jpg');
+}
+&__eighth {
+	background-image: url('../img/dog2.jpg');
 	
 }
+&__img {
+	z-index:0;
+	position: relative;
+	min-height: 700px;
+	background-size: cover;
+	background-position: center;
+	
+
+}
+
+&__bg {
+	opacity:0;
+	position: absolute;
+	z-index: -10;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	transition: 1s;
+}
+&__text {
+	opacity: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	z-index: 5;
+	color: $light-white;
+	font-size: 30px;
+	height: 100%;
+	width: 100%;
+	transition: 1s;
+	
+}
+
+&__img:hover {
+	.photo__text {
+		opacity: 1;
+	}
+	.photo__bg {
+		opacity: 1;
+	}
+}
+}
+
+
+
+
+
 
 @import './small';
 @import './medium';

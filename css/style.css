@@ -24,7 +24,6 @@ body {
 .nav {
   z-index: 1000;
   position: relative;
-  min-width: 100%;
 }
 
 .nav-mobile {
@@ -35,9 +34,12 @@ body {
   transition: transform 1s;
   transition: transform 1s, -webkit-transform 1s;
   z-index: 1000;
+  background-color: #8abaae;
+  border-radius: 5px;
 }
 
 .nav-desktop {
+  width: 100%;
   display: none;
 }
 
@@ -86,6 +88,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding: 0;
   top: 72px;
 }
 
@@ -95,9 +98,19 @@ body {
   font-size: 2em;
 }
 
+.hamburger-inner::after {
+  color: white;
+}
+
 .active {
   top: 0;
   position: fixed;
+}
+
+.marginTop {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding: 5px 10px;
 }
 
 .gallery {
@@ -105,16 +118,15 @@ body {
 }
 
 .photo {
-  position: relative;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
-  gap: 10px 10px;
+  gap: 5px 5px;
 }
 
 .photo__first {
-  background-image: url("../img/psiak.jpg");
+  background-image: url("..//img/dog2.jpg");
 }
 
 .photo__second {
@@ -147,11 +159,21 @@ body {
 
 .photo__img {
   z-index: 0;
-  width: 100%;
-  height: 700px;
   position: relative;
+  min-height: 700px;
   background-size: cover;
   background-position: center;
+}
+
+.photo__bg {
+  opacity: 0;
+  position: absolute;
+  z-index: -10;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 .photo__text {
@@ -171,20 +193,9 @@ body {
           flex-direction: column;
   z-index: 5;
   color: #eee;
-  font-size: 50px;
+  font-size: 30px;
   height: 100%;
-  -webkit-transition: 1s;
-  transition: 1s;
-  padding: 1em 1em;
-}
-
-.photo__bg {
-  opacity: 0;
-  position: absolute;
-  z-index: -10;
   width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
   -webkit-transition: 1s;
   transition: 1s;
 }
@@ -197,30 +208,32 @@ body {
   opacity: 1;
 }
 
-@media (min-width: 375px) {
+@media (max-width: 350px) {
+  .nav__span {
+    left: 20%;
+  }
+}
+
+@media (max-width: 650px) {
+  .photo {
+    -ms-grid-columns: (8fr)[1];
+        grid-template-columns: repeat(1, 8fr);
+    gap: 5px 5px;
+  }
+  .photo__text {
+    font-size: 1.5em;
+  }
   .nav__span {
     left: 30%;
   }
 }
 
-@media (min-width: 550px) {
-  .nav__span {
-    left: 40%;
-  }
-}
-
-@media (min-width: 768px) {
+@media (min-width: 650px) {
   .nav__span {
     left: 40%;
     font-size: 25px;
     top: 0.3em;
     padding: 0.5em 1em;
-  }
-}
-
-@media (min-width: 550px) {
-  .nav__span {
-    left: 40%;
   }
 }
 
@@ -322,6 +335,20 @@ body {
   }
   .nav__links li :last-child {
     margin-right: 0.5em;
+  }
+  .photo__img {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+    background-size: cover;
+  }
+  .photo__text {
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 1700px) {
+  .nav__span {
+    left: 43%;
   }
 }
 

@@ -38,6 +38,7 @@
 }
 }
 @media(min-width: 1400px){
+  
     .nav {
 
     height:89px;
@@ -81,7 +82,32 @@
 
 
 }
+.photo{
+    &__img {
+      
+        flex-basis: 50%;
+        background-size: cover;
+        
+    
+    }
+    &__text {
+       
+        font-size: 40px;
+       
+        
+    }
 }
+}
+@media(min-width: 1700px){
+    .nav {
+        &__span{
+
+            left:43%;
+        }
+    }
+}
+
+
 @media(min-width: 2400px){
     .nav {
         &__span{
