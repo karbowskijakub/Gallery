@@ -1,6 +1,6 @@
 const burgerBtn = document.querySelector('.hamburger')
 const navMobile = document.querySelector('.nav-mobile')
-const navLink = document.querySelectorAll('a')
+const footerYear = document.querySelector('.footer__year');
 
 
 const clicker = () => {
@@ -43,6 +43,10 @@ document.addEventListener('DOMContentLoaded', function(){
 
     window.addEventListener('scroll',addShadow)
 })
-
+const handleCurrentYear = () =>{
+	const year = (new Date).getFullYear();
+	footerYear.innerText = year;
+}
+handleCurrentYear();
 
 burgerBtn.addEventListener('click',clicker);
